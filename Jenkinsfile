@@ -38,7 +38,7 @@ pipeline {
             script {
                 clean_all()
             }
-            emailtext(
+            emailext(
                 subject: "Pipeline Status: ${BUILD_NUMBER}",
                 body: '''<html>
                             <body>
