@@ -37,10 +37,22 @@ pipeline {
         always {
             script {
                 clean_all()
+                sendemail(
+                    subject: "Pipeline Status: ${env.BUILD_NUMBER}",
+                    body: '''<html>
+                                <body>
+                                    <p>Build Status: ${env.BUILD_STATUS}</p>
+                                    <p>Build Number: ${env.BUILD_NUMBER}</p>
+                                    <p>Check the <a href="${env.BUILD_URL}">console output</a>.</p>
+                                </body>
+                             </html>''',
+                    to: 'itzmesahilshaikh@gmail.com',
+                    from: 'jenkins@example.com',
+                    replyTo: 'jenkins@example.com',
+                    mimeType: 'text/html'
+                )
             }
-            send_email(
-                to: 'itzmesahilshaikh@gmail.com'  // Specify the recipient email here
-            )
         }
     }
 }
+
