@@ -1,3 +1,4 @@
+@Library('Shared') _
 pipeline {
     agent {
         label "rocky"
@@ -38,12 +39,12 @@ pipeline {
                 clean_all()
             }
             emailext(
-                subject: "Pipeline Status: ${env.BUILD_NUMBER}",
+                subject: "Pipeline Status: ${BUILD_NUMBER}",
                 body: '''<html>
                             <body>
-                                <p>Build Status: ${env.BUILD_STATUS}</p>
-                                <p>Build Number: ${env.BUILD_NUMBER}</p>
-                                <p>Check the <a href="${env.BUILD_URL}">console output</a>.</p>
+                                <p>Build Status: ${BUILD_STATUS}</p>
+                                <p>Build Number: ${BUILD_NUMBER}</p>
+                                <p>Check the <a href="${BUILD_URL}">console output</a>.</p>
                             </body>
                          </html>''',
                 to: 'itzmesahilshaikh@gmail.com',
