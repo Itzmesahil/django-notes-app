@@ -38,6 +38,9 @@ pipeline {
             script {
                 clean_all()
             }
+            send_email(
+                to: 'itzmesahilshaikh@gmail.com'  // Specify the recipient email here
+            )
         }
     }
 }
