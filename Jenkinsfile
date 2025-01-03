@@ -1,7 +1,7 @@
 @Library('Shared') _
 pipeline {
     agent {
-        label "rocky"
+        label "uat"
     }
     stages {
         stage("Checkout") {
@@ -14,14 +14,14 @@ pipeline {
         stage("Code Build") {
             steps {
                 script {
-                    docker_build("notes-app-cicd", "latest", "itzmesahil")
+                    docker_build("notes-app-cicd-uat", "latest", "itzmesahil")
                 }
             }
         }
         stage("Push To Hub") {
             steps {
                 script {
-                    docker_push("notes-app-cicd", "latest", "itzmesahil")
+                    docker_push("notes-app-cicd-uat", "latest", "itzmesahil")
                 }
             }
         }
