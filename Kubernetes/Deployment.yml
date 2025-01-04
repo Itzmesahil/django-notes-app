@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: django-notes
-          image: 043661318279.dkr.ecr.ap-south-1.amazonaws.com/jenkins-argo:15
+          image: 043661318279.dkr.ecr.ap-south-1.amazonaws.com/jenkins-argo:19
           ports:
             - containerPort: 8000
