@@ -7,7 +7,7 @@ pipeline {
         stage("Checkout") {
             steps {
                 script {
-                    git_clone("https://github.com/Itzmesahil/django-notes-app.git", "main")
+                    git_clone("https://github.com/Itzmesahil/django-notes-app.git", "uat")
                 }
             }
         }
