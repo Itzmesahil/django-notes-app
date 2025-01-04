@@ -1,6 +1,6 @@
-version : "3.3"
-services :
-  web :
-     image : itzmesahil/notes-app-cicd:latest
-     ports :
-         - "8000:8000"
+version: "3.3"
+services:
+  web:
+    image: 043661318279.dkr.ecr.ap-south-1.amazonaws.com/jenkins-argo:8
+    ports:
+      - "8000:8000"
